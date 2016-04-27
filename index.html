@@ -55,15 +55,13 @@
     </head>
 	<body id="orion-browser" spellcheck="false" class="orionPage">
 		<div class="demoTitle">
-			<div>This is a demo for the <b>Orion Code Edit</b> widget. This demo consumes the <b>build version</b> of the widget.</div> 
-			<div> Keep editing in this demo and try:</div>
-			<div> 1.content assist. E.g., put cursor after "foo." at the last line and press CTRL+space.</div>
-			<div> 2.probem validations. E.g., modify something and you will see new validation markers coming up, if any</div>
-			<div> 3.hover service. Hover on any error markers or inside the eidtor.</div>
-			<div> 4.syntax highlighting</div>
-			<div> 5.Quick fix. Hover on a problem inside the eidtor, not on the ruler, e.g., (char, from) in this demo. Click on the quick fix and see.</div>
-			<div> 6.Find declaration. Select a variable and press f3.</div>
-			<div> 7.new tooling features coming while Orion is being improved...</div>
+			<form >
+  				X coordinate:<br>
+  				<input type="text" name="firstname" value="Mickey"><br>
+  				Y coordinate:<br>
+  				<input type="text" name="lastname" value="Mouse"><br><br>
+ 			    <input type="submit" onclick="_setSelectionTo(100,100)" value="Submit">
+				</form>
 		</div>
 		<div class="demoTitle">
 			<span id = "progressMessageDiv" style="color: green">Loading language tooling plugins...</span>
