@@ -34,6 +34,7 @@
 		<script src="code_edit/built-codeEdit.js"></script>
 		<script>
 			/*globals orion */
+			var multi = new orion.codeEdit();
 			window.onload=function(){
 				var codeEdit = new orion.codeEdit();
 				var contents = 'var foo = "bar";\n' +
@@ -55,7 +56,7 @@
     </head>
 	<body id="orion-browser" spellcheck="false" class="orionPage">
 		<div class="demoTitle">
- 			    <input type="submit" onclick="codeEdit._updateBlockCursorVisible()" value="position 1"><br>
+ 			    <input type="submit" onclick="multi._updateBlockCursorVisible()" value="position 1"><br>
  			    <input type="submit" onclick="_setSelectionTo(100,150)" value="position 2">
 		</div>
 		<div class="demoTitle">
