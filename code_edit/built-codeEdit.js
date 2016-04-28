@@ -38,6 +38,10 @@ var requirejs, require, define;
      * to.
      * @returns {String} normalized name
      */
+
+     function alert(){
+        alert("I am an alert box!");
+     }
     function normalize(name, baseName) {
         var nameParts, nameSegment, mapValue, foundMap,
             foundI, foundStarMap, starI, i, j, part,
