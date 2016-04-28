@@ -39,7 +39,7 @@ var requirejs, require, define;
      * @returns {String} normalized name
      */
 
-     function alert(){
+     function alertTest(){
         alert("I am an alert box!");
      }
     function normalize(name, baseName) {
