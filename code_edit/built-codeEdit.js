@@ -41067,7 +41067,7 @@ Newly added
 define('orion/multiusers',["orion/EventTarget"], function(EventTarget) {
 
     /**
-     * Creates a new problem service instance. Client should obtain the service
+     * Creates a new MultiUsers instance. Client should obtain the service
      * <tt>orion.core.marker</tt> from the service registry rather than instantiate
      * this service directly.
      * @class The problem service tracks markers and sends notification of marker changes.
