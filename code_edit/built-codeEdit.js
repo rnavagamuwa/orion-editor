@@ -27868,20 +27868,6 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					if (tooltip) { tooltip.hide(); }
 					that._updateCursorStatus();
 					that._highlightCurrentLine(e.newValue, e.oldValue);
-
-
-                    var viewDiv = this._viewDiv;
-                    var cursorDiv = util.createElement(viewDiv.ownerDocument, "div"); //$NON-NLS-1$
-                    cursorDiv.className = "textviewBlockCursor"; //$NON-NLS-1$
-                    this._cursorDiv = cursorDiv;
-                    cursorDiv.tabIndex = -1;
-                    cursorDiv.style.zIndex = "2"; //$NON-NLS-1$
-                    cursorDiv.style.color = "transparent"; //$NON-NLS-1$
-                    cursorDiv.style.position = "absolute"; //$NON-NLS-1$
-                    cursorDiv.style.pointerEvents = "none"; //$NON-NLS-1$
-                    cursorDiv.innerHTML = "&nbsp;"; //$NON-NLS-1$
-                    viewDiv.appendChild(cursorDiv);
-                    this._updateDOMSelection();
 				}
 			};
 			textView.addEventListener("ModelChanged", this._listener.onModelChanged); //$NON-NLS-0$
