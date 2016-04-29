@@ -35,6 +35,7 @@
 		<script>
 			/*globals orion */
 			var codeEdit = new orion.codeEdit();
+			var result;
 			window.onload=function(){
 				
 				var contents = 'var foo = "bar";\n' +
@@ -47,7 +48,7 @@
 									 "}\n" + 
 									"//Keep editting in this demo and try the content assit, probem validations and hover service!\n" +
 									 "var foo2 = foo."; 
-				codeEdit.create({parent: "embeddedEditor", contentType: "application/javascript", contents: contents}).then(function(editorViewer) {
+				result = codeEdit.create({parent: "embeddedEditor", contentType: "application/javascript", contents: contents}).then(function(editorViewer) {
 					document.getElementById("progressMessageDiv").textContent = "Plugins loaded!";
 					//You can call APIs from editorViewer.editor  for further actions.
 				});
