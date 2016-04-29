@@ -41061,6 +41061,39 @@ define('orion/problems',["orion/EventTarget"], function(EventTarget) {
 	return {ProblemService: ProblemService};
 });
 
+/*******************************************************************************
+Newly added
+********************************************************************************/
+define('orion/multiusers',["orion/EventTarget"], function(EventTarget) {
+
+    /**
+     * Creates a new problem service instance. Client should obtain the service
+     * <tt>orion.core.marker</tt> from the service registry rather than instantiate
+     * this service directly.
+     * @class The problem service tracks markers and sends notification of marker changes.
+     * @name orion.problems.ProblemService
+     */
+    function MultiUsers(serviceRegistry, serviceID) {
+        this._serviceRegistry = serviceRegistry;
+        EventTarget.attach(this);
+        this._serviceRegistration = serviceRegistry.registerService(serviceID || "orion.core.marker", this); //$NON-NLS-0$
+    }
+
+    MultiUsers.prototype = /** @lends orion.problems.ProblemService.prototype */ {
+        // provider
+        _setCursors: function(cursors) {
+            this.cursors = cursors;
+            this.dispatchEvent({type:"cursorsChanged", cursors:cursors}); //$NON-NLS-0$
+        }       
+    };
+    MultiUsers.prototype.constructor = MultiUsers;
+    
+    //return the module exports
+    return {MultiUsers: MultiUsers};
+});
+
+/*******************************************************************************/
+
 
 /*******************************************************************************
  * @license
