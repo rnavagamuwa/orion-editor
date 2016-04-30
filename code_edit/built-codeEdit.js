@@ -28332,6 +28332,12 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 	};
 });
 
+ 
+        BaseEditor.prototype.test = function(){
+            alert("hi");
+
+        },
+
 /*******************************************************************************
  * @license
  * Copyright (c) 2013 IBM Corporation and others.
