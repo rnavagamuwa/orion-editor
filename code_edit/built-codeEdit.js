@@ -27650,11 +27650,6 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			textView.setText(text, start, end, show, callback);
 		},
 
-        
-        BaseEditor.prototype.test = function(){
-            alert("hi");
-
-        },
 
 		setSelection: function(start, end, show, callback) {
 			var textView = this._textView;
