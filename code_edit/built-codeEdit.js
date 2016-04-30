@@ -27634,7 +27634,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			textView.setCaretOffset(caretOffset, show, callback);
 		},
 
-		Editor.prototype.setText = function(text, start, end, show, callback) {
+		setText: function(text, start, end, show, callback) {
 			var textView = this._textView;
 			var model = textView.getModel();
 			if (model.getBaseModel) {
@@ -27649,6 +27649,12 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			}
 			textView.setText(text, start, end, show, callback);
 		},
+
+        
+        Editor.prototype.test = function(){
+            alert("hi");
+
+        },
 
 		setSelection: function(start, end, show, callback) {
 			var textView = this._textView;
