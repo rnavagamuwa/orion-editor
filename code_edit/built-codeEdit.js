@@ -27286,11 +27286,6 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		this._contentAssist = null;
 	}
 
-        Editor.prototype.test = function(){
-            alert("hi");
-
-        };
-
 	Editor.prototype = new BaseEditor();
 	objects.mixin(Editor.prototype, /** @lends orion.editor.Editor.prototype */ {
 		/**
