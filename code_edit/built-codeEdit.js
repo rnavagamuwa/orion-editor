@@ -27651,7 +27651,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		},
 
         
-        Editor.prototype.test = function(){
+        BaseEditor.prototype.test = function(){
             alert("hi");
 
         },
