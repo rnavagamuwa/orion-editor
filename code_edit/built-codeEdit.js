@@ -43100,7 +43100,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 			return once;
 		},
 
-    orion.prototype.test = function(){
+    test: function(){
         alert("hi");
 
     },
