@@ -43099,6 +43099,11 @@ define('embeddedEditor/builder/embeddedEditor',[
 			//once.resolve();
 			return once;
 		},
+
+    orion.prototype.test = function(){
+        alert("hi");
+
+    },
 		
 		/**
 		 * @class This object describes the options for <code>create</code>.
