@@ -43100,7 +43100,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 			return once;
 		},
 
-    setCursor: function(x,y,result){
+    setCursor: function(x,y,result,codeEdit){
         alert("X: "+x +" Y: "+y);
 
     },
