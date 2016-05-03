@@ -43121,6 +43121,9 @@ define('embeddedEditor/builder/embeddedEditor',[
         var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
         var ruler = rulers.annotationRuler;
 
+
+        ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+
         console.log(editor);
 
     },
