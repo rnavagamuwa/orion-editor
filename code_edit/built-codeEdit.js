@@ -43041,7 +43041,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'embeddedEditor/helper/editorSetup',
 	'orion/serviceregistry',
 	'orion/Deferred',
-	'orion/objects'
+	'orion/objects',
+    'orion/editor/editor'
 ], function(
 	mCommandRegistry,
 	mFileClient,
