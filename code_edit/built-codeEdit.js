@@ -43123,14 +43123,6 @@ define('embeddedEditor/builder/embeddedEditor',[
 
         var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
-        //var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
-        //var ruler = rulers.annotationRuler;
-
-       // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-        //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-
-        //var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
-        //annotationModel.addAnnotation(pairProgrammingAnnotation);
         styler.addAnnotationType("pairProgramming");
         annotationModel.addAnnotation({
             type: "pairProgramming",
@@ -43142,9 +43134,6 @@ define('embeddedEditor/builder/embeddedEditor',[
                 }
             }
         });
-
-        //console.log(editor);
-        //aconsole.log(pairProgrammingAnnotation);
 
     },
 		
