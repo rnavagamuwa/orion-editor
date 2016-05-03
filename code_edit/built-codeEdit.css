@@ -460,7 +460,8 @@
 .annotation.writeOccurrence,
 .annotation.linkedGroup,
 .annotation.currentLinkedGroup,
-.annotation.selectedLinkedGroup {
+.annotation.selectedLinkedGroup,
+.annotation.pairProgramming {
 }
 .annotation.blame {
 	color: gray;
@@ -470,6 +471,12 @@
 	color: black;
 	background-color: rgb(184, 103, 163);
 }
+.annotation.pairProgramming{
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAIAAADZSiLoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAaSURBVBhXY5x/KoyBgSHBdCUTkIIAGIuBAQBMsAMD4UOAtwAAAABJRU5ErkJggg==);
+	background-repeat: repeat-y;
+	color: #181818;
+}
+
 .annotation.diffAdded {
 	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAIAAADZSiLoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAaSURBVBhXY5x/KoyBgSHBdCUTkIIAGIuBAQBMsAMD4UOAtwAAAABJRU5ErkJggg==);
 	background-repeat: repeat-y;
