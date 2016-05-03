@@ -43113,7 +43113,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 		},
 
 
-    setCursor: function(x,y,result,codeEdit){
+    setCursor: function(x,y,codeEdit){
         
         var AT = mAnnotations.AnnotationType;
         var editor = codeEdit._editorCommands.editor;
