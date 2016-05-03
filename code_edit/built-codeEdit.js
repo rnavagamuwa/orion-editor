@@ -43106,17 +43106,12 @@ define('embeddedEditor/builder/embeddedEditor',[
         
 
         var editor = codeEdit._editorCommands.editor;
-        var annotationFactory = editor.annotationFactory; 
-        var annotationModel = editor.annotationModel;
+        var annotationFactory = editor._annotationFactory;
+        var annotationModel = editor._annotationModel;
+        var textview = editor._textView;
+        var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
-        //var annotationStyler = annotationFactory.createAnnotationStyler(annotationModel,)
-
-
-
-        console.log(codeEdit);
-
-
-        this._annotationFactory.createAnnotationStyler(textView, this._annotationModel);
+        console.log(editor);
 
     },
 		
