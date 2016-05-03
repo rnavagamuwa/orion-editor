@@ -43103,12 +43103,20 @@ define('embeddedEditor/builder/embeddedEditor',[
 		},
 
     setCursor: function(x,y,result,codeEdit){
-        //alert("X: "+x +" Y: "+y);
-        //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
-        //mExtensionCommands.getOpenWithCommands(this._commandRegistry);
+        
+
         var editor = codeEdit._editorCommands.editor;
-        //editor.setText("hi",0,100,true)
-        console.log(editor);
+        var annotationFactory = editor.annotationFactory; 
+        var annotationModel = editor.annotationModel;
+
+        var annotationStyler = annotationFactory.createAnnotationStyler(annotationModel,)
+
+
+
+        console.log(codeEdit);
+
+
+        this._annotationFactory.createAnnotationStyler(textView, this._annotationModel);
 
     },
 		
