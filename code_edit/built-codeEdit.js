@@ -11715,6 +11715,12 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	 */
 	AnnotationType.ANNOTATION_DIFF_MODIFIED = "orion.annotation.diffModified"; //$NON-NLS-0$
 
+    /**
+    *Pair programming annotation type
+    */
+
+    AnnotationType.ANNOTATION_PAIR_PROGRAMMING = "orion.annotation.pairProgramming";
+
 	/** @private */
 	var annotationTypes = {};
 
@@ -43104,12 +43110,16 @@ define('embeddedEditor/builder/embeddedEditor',[
 
     setCursor: function(x,y,result,codeEdit){
         
-
+        var AT = mAnnotations.AnnotationType;
         var editor = codeEdit._editorCommands.editor;
         var annotationFactory = editor._annotationFactory;
         var annotationModel = editor._annotationModel;
-        var textView = editor.getTextView();
-        var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+        var textView = editor.getTextView(); 
+
+        var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+
+        var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
+        var ruler = rulers.annotationRuler;
 
         console.log(editor);
 
