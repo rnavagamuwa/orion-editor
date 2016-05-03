@@ -43109,7 +43109,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         var annotationFactory = editor.annotationFactory; 
         var annotationModel = editor.annotationModel;
 
-        var annotationStyler = annotationFactory.createAnnotationStyler(annotationModel,)
+        //var annotationStyler = annotationFactory.createAnnotationStyler(annotationModel,)
 
 
 
