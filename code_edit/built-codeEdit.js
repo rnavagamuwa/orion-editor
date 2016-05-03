@@ -43123,55 +43123,9 @@ define('embeddedEditor/builder/embeddedEditor',[
         var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
         var ruler = rulers.annotationRuler;
 
-
+        styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
         var pairProgramming = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, x, y, editor.getText(x, y));
-        // annotationModel.addAnnotation(pairProgramming);
-
-
-
-
-        //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-
-
-var view = editor.getTextView();
-        var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
-        annotationStyler.addAnnotationType("virtualCursors");
-        view.annotationModel.addAnnotation({
-            type: "virtualCursors",
-            start: 100,
-            end: 100,
-            rangeStyle: {
-                style: {
-                    outline: "1px solid red"
-                }
-            }
-        });
-        view.annotationModel.addAnnotation({
-            type: "virtualCursors",
-            start: 130,
-            end: 130,
-            rangeStyle: {
-                style: {
-                    outline: "1px solid green"
-                }
-            }
-        });
-        view.annotationModel.addAnnotation({
-            type: "virtualCursors",
-            start: 400,
-            end: 400,
-            rangeStyle: {
-                style: {
-                    outline: "1px solid magenta"
-                }
-            }
-        });
-
-
-
-
-
-
+        annotationModel.addAnnotation(pairProgramming);
 
         console.log(editor);
 
