@@ -43108,7 +43108,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         var editor = codeEdit._editorCommands.editor;
         var annotationFactory = editor._annotationFactory;
         var annotationModel = editor._annotationModel;
-        var textview = editor._textView;
+        var textView = editor.getTextView();
         var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
         console.log(editor);
