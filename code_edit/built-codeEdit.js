@@ -43041,7 +43041,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'embeddedEditor/helper/editorSetup',
 	'orion/serviceregistry',
 	'orion/Deferred',
-	'orion/objects'
+	'orion/objects',
+    'orion/editor/annotations'
 ], function(
 	mCommandRegistry,
 	mFileClient,
@@ -43051,7 +43052,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	mEditorSetup,
 	mServiceRegistry, 
 	Deferred,
-	objects
+	objects,
+    mAnnotations
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
@@ -43105,7 +43107,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
         //mExtensionCommands.getOpenWithCommands(this._commandRegistry);
         var editor = codeEdit._editorCommands.editor;
-        editor.setText("hi",0,100,true)
+        //editor.setText("hi",0,100,true)
         console.log(editor);
 
     },
