@@ -43134,8 +43134,8 @@ define('embeddedEditor/builder/embeddedEditor',[
         styler.addAnnotationType("virtualCursors");
         annotationModel.addAnnotation({
             type: "virtualCursors",
-            start: 150,
-            end: 150,
+            start: x,
+            end: y,
             rangeStyle: {
                 style: {
                     outline: "1px solid red"
@@ -43144,7 +43144,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         });
 
         //console.log(editor);
-        //console.log(pairProgrammingAnnotation);
+        //aconsole.log(pairProgrammingAnnotation);
 
     },
 		

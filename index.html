@@ -56,9 +56,8 @@
 		</script>
     </head>
 	<body id="orion-browser" spellcheck="false" class="orionPage">
-	<font color="white">X: </font><input name="textbox1" id="textbox1" type="text" />
-	<font color="white">Y: </font> <input name="textbox1" id="textbox1" type="text" /><br>
-	<button type="button" onclick="codeEdit.setCursor(100,100,codeEdit)">Demo</button>
+	<font color="white">Position:(Example: 150) </font><input name="textbox1" id="textbox1" type="text" />
+	<button type="button" onclick="codeEdit.setCursor(document.getElementById('textbox1').value,document.getElementById('textbox1').value,codeEdit)">Demo</button>
 		<div class="demoTitle">
 		</div>
 		<div class="demoTitle">
