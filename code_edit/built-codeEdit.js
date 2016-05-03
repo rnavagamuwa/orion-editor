@@ -43121,7 +43121,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         var annotationModel = editor._annotationModel;
         var textView = editor.getTextView(); 
 
-        //var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+        var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
         //var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
         //var ruler = rulers.annotationRuler;
