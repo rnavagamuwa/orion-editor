@@ -27285,6 +27285,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		this._foldingRuler = null;
 		this._contentAssist = null;
 	}
+
 	Editor.prototype = new BaseEditor();
 	objects.mixin(Editor.prototype, /** @lends orion.editor.Editor.prototype */ {
 		/**
@@ -27649,6 +27650,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 			}
 			textView.setText(text, start, end, show, callback);
 		},
+
 
 		setSelection: function(start, end, show, callback) {
 			var textView = this._textView;
@@ -28330,6 +28332,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 		Editor: Editor
 	};
 });
+
 
 /*******************************************************************************
  * @license
@@ -43038,7 +43041,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'embeddedEditor/helper/editorSetup',
 	'orion/serviceregistry',
 	'orion/Deferred',
-	'orion/objects'
+	'orion/objects',
+    'orion/editor/annotations'
 ], function(
 	mCommandRegistry,
 	mFileClient,
@@ -43048,7 +43052,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	mEditorSetup,
 	mServiceRegistry, 
 	Deferred,
-	objects
+	objects,
+    mAnnotations
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
@@ -43096,6 +43101,19 @@ define('embeddedEditor/builder/embeddedEditor',[
 			//once.resolve();
 			return once;
 		},
+
+    setCursor: function(x,y,result,codeEdit){
+        
+
+        var editor = codeEdit._editorCommands.editor;
+        var annotationFactory = editor._annotationFactory;
+        var annotationModel = editor._annotationModel;
+        var textview = editor._textView;
+        var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+
+        console.log(editor);
+
+    },
 		
 		/**
 		 * @class This object describes the options for <code>create</code>.
