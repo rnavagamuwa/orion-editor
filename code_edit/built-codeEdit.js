@@ -43113,7 +43113,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 		},
 
 
-    setCursor: function(x,y,codeEdit){
+    setCursor: function(pos,codeEdit,colour){
         
         var AT = mAnnotations.AnnotationType;
         var editor = codeEdit._editorCommands.editor;
@@ -43121,19 +43121,19 @@ define('embeddedEditor/builder/embeddedEditor',[
         var annotationModel = editor._annotationModel;
         var textView = editor.getTextView(); 
 
-        //var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+        var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
-        //var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
-        //var ruler = rulers.annotationRuler;
-
-       // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-        //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-
-        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
-        annotationModel.addAnnotation(pairProgrammingAnnotation);
-
-        //console.log(editor);
-        console.log(pairProgrammingAnnotation);
+        styler.addAnnotationType("pairProgramming");
+        annotationModel.addAnnotation({
+            type: "pairProgramming",
+            start: parseInt(pos),
+            end: parseInt(pos),
+            rangeStyle: {
+                style: {
+                    outline: "1px solid "+colour
+                }
+            }
+        });
 
     },
 		
