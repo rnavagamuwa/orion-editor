@@ -43113,7 +43113,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 		},
 
 
-    setCursor: function(x,y,codeEdit){
+    setCursor: function(pos,codeEdit,colour){
         
         var AT = mAnnotations.AnnotationType;
         var editor = codeEdit._editorCommands.editor;
@@ -43131,14 +43131,14 @@ define('embeddedEditor/builder/embeddedEditor',[
 
         //var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
         //annotationModel.addAnnotation(pairProgrammingAnnotation);
-        styler.addAnnotationType("virtualCursors");
+        styler.addAnnotationType("pairProgramming");
         annotationModel.addAnnotation({
-            type: "virtualCursors",
-            start: parseInt(x),
-            end: parseInt(y),
+            type: "pairProgramming",
+            start: parseInt(pos),
+            end: parseInt(pos),
             rangeStyle: {
                 style: {
-                    outline: "1px solid red"
+                    outline: "1px solid "+colour
                 }
             }
         });
