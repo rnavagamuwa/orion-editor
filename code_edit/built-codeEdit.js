@@ -43043,7 +43043,9 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'orion/Deferred',
 	'orion/objects',
     'orion/extensionCommands',
-    'orion/editor/editor'
+    'orion/editor/editor',
+    'orion/editor/editorFeatures',
+    'orion/hover'
 ], function(
 	mCommandRegistry,
 	mFileClient,
@@ -43055,7 +43057,9 @@ define('embeddedEditor/builder/embeddedEditor',[
 	Deferred,
 	objects,
     mExtensionCommands,
-    mEditor
+    mEditor,
+    mEditorFeatures,
+    mHoverFactory
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
@@ -43107,8 +43111,26 @@ define('embeddedEditor/builder/embeddedEditor',[
     setCursor: function(x,y,result,codeEdit){
         //alert("X: "+x +" Y: "+y);
         //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
-        mExtensionCommands.getOpenWithCommands(this._commandRegistry);
-        mEditor.setLineNumberRulerVisible(false,true);
+        //mExtensionCommands.getOpenWithCommands(this._commandRegistry);
+        // var editor = new mEditor.Editor({
+        //         textViewFactory: textViewFactory,
+        //         undoStackFactory: that.undoStack ? {createUndoStack: function(editor) {
+        //             that.undoStack.setView(editor.getTextView());
+        //             return that.undoStack;
+        //         }}: new mEditorFeatures.UndoFactory(),
+        //         textDNDFactory: new mEditorFeatures.TextDNDFactory(),
+        //         annotationFactory: new mEditorFeatures.AnnotationFactory(),
+        //         foldingRulerFactory: new mEditorFeatures.FoldingRulerFactory(),
+        //         zoomRulerFactory: new mEditorFeatures.ZoomRulerFactory(),
+        //         lineNumberRulerFactory: new mEditorFeatures.LineNumberRulerFactory(),
+        //         hoverFactory: new mHoverFactory.HoverFactory(serviceRegistry, inputManager, commandRegistry),
+        //         contentAssistFactory: contentAssistFactory,
+        //         keyBindingFactory: keyBindingFactory,
+        //         statusReporter: this.statusReporter,
+        //         domNode: this._parent,
+        //         syntaxHighlighter: this.syntaxHighlighter
+        //     });
+        codeEdit.getTextView();
 
     },
 		
