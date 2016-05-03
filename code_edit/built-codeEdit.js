@@ -43053,7 +43053,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 	mServiceRegistry, 
 	Deferred,
 	objects,
-    mEditor
+    mExtensionCommands
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
@@ -43104,7 +43104,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 
     setCursor: function(x,y,result,codeEdit){
         //alert("X: "+x +" Y: "+y);
-        extensionCommandUtils.getEditors(this.serviceRegistry,contentTypeRegistry);
+        mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
 
     },
 		
