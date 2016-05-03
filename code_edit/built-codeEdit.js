@@ -43129,10 +43129,11 @@ define('embeddedEditor/builder/embeddedEditor',[
        // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
         //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
 
-        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, x, y, editor.getText(x, y));
+        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
         annotationModel.addAnnotation(pairProgrammingAnnotation);
 
-        console.log(editor);
+        //console.log(editor);
+        console.log(pairProgrammingAnnotation);
 
     },
 		
