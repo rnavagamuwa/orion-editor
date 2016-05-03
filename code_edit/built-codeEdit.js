@@ -43124,8 +43124,10 @@ define('embeddedEditor/builder/embeddedEditor',[
         var ruler = rulers.annotationRuler;
 
         styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-        var pairProgramming = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, x, y, editor.getText(x, y));
-        annotationModel.addAnnotation(pairProgramming);
+        ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+
+        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, x, y, editor.getText(x, y));
+        annotationModel.addAnnotation(pairProgrammingAnnotation);
 
         console.log(editor);
 
