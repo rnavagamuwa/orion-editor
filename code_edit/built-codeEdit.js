@@ -43042,7 +43042,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'orion/serviceregistry',
 	'orion/Deferred',
 	'orion/objects',
-    'orion/extensionCommands'
+    'orion/extensionCommands',
+    'orion/editor/editor'
 ], function(
 	mCommandRegistry,
 	mFileClient,
@@ -43053,7 +43054,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 	mServiceRegistry, 
 	Deferred,
 	objects,
-    mExtensionCommands
+    mExtensionCommands,
+    mEditor
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
@@ -43106,6 +43108,7 @@ define('embeddedEditor/builder/embeddedEditor',[
         //alert("X: "+x +" Y: "+y);
         //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
         mExtensionCommands.getOpenWithCommands(this._commandRegistry);
+        mEditor.setLineNumberRulerVisible(false,true);
 
     },
 		
