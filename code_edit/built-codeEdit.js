@@ -11715,12 +11715,6 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	 */
 	AnnotationType.ANNOTATION_DIFF_MODIFIED = "orion.annotation.diffModified"; //$NON-NLS-0$
 
-    /**
-    *Pair programming annotation type
-    */
-
-    AnnotationType.ANNOTATION_PAIR_PROGRAMMING = "orion.annotation.pairProgramming";
-
 	/** @private */
 	var annotationTypes = {};
 
@@ -43139,8 +43133,8 @@ define('embeddedEditor/builder/embeddedEditor',[
             rangeStyle: {
                 style: {
                     outline: "1px solid "+colour
+                }
             }
-            
         });
 
         //console.log(editor);
