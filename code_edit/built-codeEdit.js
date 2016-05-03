@@ -27948,6 +27948,8 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 						styler.addAnnotationType(AT.ANNOTATION_CURRENT_LINKED_GROUP);
 						styler.addAnnotationType(AT.ANNOTATION_LINKED_GROUP);
 						styler.addAnnotationType(HIGHLIGHT_ERROR_ANNOTATION);
+                        styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+
 					}
 				}
 
@@ -27984,6 +27986,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_ADDED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_DELETED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_MODIFIED);
+                    ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
 
 				}
 				this.setOverviewRulerVisible(this._overviewRulerVisible || this._overviewRulerVisible === undefined, true);
@@ -43118,13 +43121,13 @@ define('embeddedEditor/builder/embeddedEditor',[
         var annotationModel = editor._annotationModel;
         var textView = editor.getTextView(); 
 
-        var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+        //var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
 
-        var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
-        var ruler = rulers.annotationRuler;
+        //var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
+        //var ruler = rulers.annotationRuler;
 
-        styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
-        ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+       // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+        //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
 
         var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, x, y, editor.getText(x, y));
         annotationModel.addAnnotation(pairProgrammingAnnotation);
