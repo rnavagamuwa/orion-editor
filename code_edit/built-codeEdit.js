@@ -43129,8 +43129,19 @@ define('embeddedEditor/builder/embeddedEditor',[
        // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
         //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
 
-        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
-        annotationModel.addAnnotation(pairProgrammingAnnotation);
+        //var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
+        //annotationModel.addAnnotation(pairProgrammingAnnotation);
+        styler.addAnnotationType("virtualCursors");
+        annotationModel.addAnnotation({
+            type: "virtualCursors",
+            start: 150,
+            end: 150,
+            rangeStyle: {
+                style: {
+                    outline: "1px solid red"
+                }
+            }
+        });
 
         //console.log(editor);
         console.log(pairProgrammingAnnotation);
