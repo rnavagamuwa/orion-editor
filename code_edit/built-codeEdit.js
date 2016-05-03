@@ -43041,11 +43041,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 	'embeddedEditor/helper/editorSetup',
 	'orion/serviceregistry',
 	'orion/Deferred',
-	'orion/objects',
-    'orion/extensionCommands',
-    'orion/editor/editor',
-    'orion/editor/editorFeatures',
-    'orion/hover'
+	'orion/objects'
 ], function(
 	mCommandRegistry,
 	mFileClient,
@@ -43055,11 +43051,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 	mEditorSetup,
 	mServiceRegistry, 
 	Deferred,
-	objects,
-    mExtensionCommands,
-    mEditor,
-    mEditorFeatures,
-    mHoverFactory
+	objects
 ) {
 	function CodeEdit(options) {
 		this.serviceRegistry = new mServiceRegistry.ServiceRegistry();
