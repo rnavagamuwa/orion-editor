@@ -53,12 +53,32 @@
 					//You can call APIs from editorViewer.editor  for further actions.
 				});
 			};
+
+			function setCursor(pos, codeEdit, colour){
+				 var editor = codeEdit._editorCommands.editor;
+       			 var annotationFactory = editor._annotationFactory;
+       			 var annotationModel = editor._annotationModel;
+       			 var textView = editor.getTextView(); 
+				 var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+
+       			 styler.addAnnotationType("pairProgramming");
+       			 annotationModel.addAnnotation({
+            		type: "pairProgramming",
+            		start: parseInt(pos),
+            		end: parseInt(pos),
+            		rangeStyle: {
+                		style: {
+                    		outline: "1px solid "+colour
+                		}
+            		}
+       			 });
+			}
 		</script>
     </head>
 	<body id="orion-browser" spellcheck="false" class="orionPage">
 	<font color="white">Position: </font><input name="textbox1" id="textbox1" type="text" placeholder="150" />
 	<font color="white">Cursor colour: </font><input name="textbox2" id="textbox2" type="text" placeholder="red"/>
-	<button type="button" onclick="codeEdit.setCursor(document.getElementById('textbox1').value,codeEdit,document.getElementById('textbox2').value)">Submit</button>
+	<button type="button" onclick=" setCursor(document.getElementById('textbox1').value,codeEdit,document.getElementById('textbox2').value)">Submit</button>
 		<div class="demoTitle">
 		</div>
 		<div class="demoTitle">
