@@ -11715,6 +11715,12 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	 */
 	AnnotationType.ANNOTATION_DIFF_MODIFIED = "orion.annotation.diffModified"; //$NON-NLS-0$
 
+    /**
+    *Pair programming annotation type
+    */
+
+    AnnotationType.ANNOTATION_PAIR_PROGRAMMING = "orion.annotation.pairProgramming";
+
 	/** @private */
 	var annotationTypes = {};
 
@@ -11804,6 +11810,7 @@ define("orion/editor/annotations", ['i18n!orion/editor/nls/messages', 'orion/edi
 	registerType(AnnotationType.ANNOTATION_DIFF_ADDED);
 	registerType(AnnotationType.ANNOTATION_DIFF_DELETED);
 	registerType(AnnotationType.ANNOTATION_DIFF_MODIFIED);
+    registerType(AnnotationType.ANNOTATION_PAIR_PROGRAMMING);//Annotation for pair programming cursors
 
 	AnnotationType.registerType(AnnotationType.ANNOTATION_FOLDING, FoldingAnnotation);
 
@@ -27941,6 +27948,8 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 						styler.addAnnotationType(AT.ANNOTATION_CURRENT_LINKED_GROUP);
 						styler.addAnnotationType(AT.ANNOTATION_LINKED_GROUP);
 						styler.addAnnotationType(HIGHLIGHT_ERROR_ANNOTATION);
+                        styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+
 					}
 				}
 
@@ -27977,6 +27986,7 @@ define("orion/editor/editor", [ //$NON-NLS-0$
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_ADDED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_DELETED);
 					ruler.addAnnotationType(AT.ANNOTATION_DIFF_MODIFIED);
+                    ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
 
 				}
 				this.setOverviewRulerVisible(this._overviewRulerVisible || this._overviewRulerVisible === undefined, true);
@@ -43102,16 +43112,28 @@ define('embeddedEditor/builder/embeddedEditor',[
 			return once;
 		},
 
-    setCursor: function(x,y,result,codeEdit){
-        
 
+    setCursor: function(x,y,codeEdit){
+        
+        var AT = mAnnotations.AnnotationType;
         var editor = codeEdit._editorCommands.editor;
         var annotationFactory = editor._annotationFactory;
         var annotationModel = editor._annotationModel;
-        var textview = editor._textView;
-        var annotationStyler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+        var textView = editor.getTextView(); 
 
-        console.log(editor);
+        //var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
+
+        //var rulers = annotationFactory.createAnnotationRulers(this._annotationModel);
+        //var ruler = rulers.annotationRuler;
+
+       // styler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+        //ruler.addAnnotationType(AT.ANNOTATION_PAIR_PROGRAMMING);
+
+        var pairProgrammingAnnotation = AT.createAnnotation(AT.ANNOTATION_PAIR_PROGRAMMING, 100, 100, editor.getText(100, 100));
+        annotationModel.addAnnotation(pairProgrammingAnnotation);
+
+        //console.log(editor);
+        console.log(pairProgrammingAnnotation);
 
     },
 		
