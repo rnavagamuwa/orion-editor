@@ -43134,8 +43134,8 @@ define('embeddedEditor/builder/embeddedEditor',[
         styler.addAnnotationType("virtualCursors");
         annotationModel.addAnnotation({
             type: "virtualCursors",
-            start: x,
-            end: y,
+            start: parseInt(x),
+            end: parseInt(y),
             rangeStyle: {
                 style: {
                     outline: "1px solid red"
