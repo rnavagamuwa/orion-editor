@@ -43104,24 +43104,7 @@ define('embeddedEditor/builder/embeddedEditor',[
 
     setCursor: function(x,y,result,codeEdit){
         //alert("X: "+x +" Y: "+y);
-        var editor = new mEditor.Editor({
-                textViewFactory: textViewFactory,
-                undoStackFactory: that.undoStack ? {createUndoStack: function(editor) {
-                    that.undoStack.setView(editor.getTextView());
-                    return that.undoStack;
-                }}: new mEditorFeatures.UndoFactory(),
-                textDNDFactory: new mEditorFeatures.TextDNDFactory(),
-                annotationFactory: new mEditorFeatures.AnnotationFactory(),
-                foldingRulerFactory: new mEditorFeatures.FoldingRulerFactory(),
-                zoomRulerFactory: new mEditorFeatures.ZoomRulerFactory(),
-                lineNumberRulerFactory: new mEditorFeatures.LineNumberRulerFactory(),
-                hoverFactory: new mHoverFactory.HoverFactory(serviceRegistry, inputManager, commandRegistry),
-                contentAssistFactory: contentAssistFactory,
-                keyBindingFactory: keyBindingFactory,
-                statusReporter: this.statusReporter,
-                domNode: this._parent,
-                syntaxHighlighter: this.syntaxHighlighter
-            });
+        extensionCommandUtils.getEditors(this.serviceRegistry,contentTypeRegistry);
 
     },
 		
