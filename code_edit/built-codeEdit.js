@@ -43112,31 +43112,6 @@ define('embeddedEditor/builder/embeddedEditor',[
 			return once;
 		},
 
-
-    setCursor: function(pos,codeEdit,colour){
-        
-        var AT = mAnnotations.AnnotationType;
-        var editor = codeEdit._editorCommands.editor;
-        var annotationFactory = editor._annotationFactory;
-        var annotationModel = editor._annotationModel;
-        var textView = editor.getTextView(); 
-
-        var styler = annotationFactory.createAnnotationStyler(textView , annotationModel);
-
-        styler.addAnnotationType("pairProgramming");
-        annotationModel.addAnnotation({
-            type: "pairProgramming",
-            start: parseInt(pos),
-            end: parseInt(pos),
-            rangeStyle: {
-                style: {
-                    outline: "1px solid "+colour
-                }
-            }
-        });
-
-    },
-		
 		/**
 		 * @class This object describes the options for <code>create</code>.
 		 * @name orion.editor.EditOptions
