@@ -43112,25 +43112,9 @@ define('embeddedEditor/builder/embeddedEditor',[
         //alert("X: "+x +" Y: "+y);
         //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
         //mExtensionCommands.getOpenWithCommands(this._commandRegistry);
-        // var editor = new mEditor.Editor({
-        //         textViewFactory: textViewFactory,
-        //         undoStackFactory: that.undoStack ? {createUndoStack: function(editor) {
-        //             that.undoStack.setView(editor.getTextView());
-        //             return that.undoStack;
-        //         }}: new mEditorFeatures.UndoFactory(),
-        //         textDNDFactory: new mEditorFeatures.TextDNDFactory(),
-        //         annotationFactory: new mEditorFeatures.AnnotationFactory(),
-        //         foldingRulerFactory: new mEditorFeatures.FoldingRulerFactory(),
-        //         zoomRulerFactory: new mEditorFeatures.ZoomRulerFactory(),
-        //         lineNumberRulerFactory: new mEditorFeatures.LineNumberRulerFactory(),
-        //         hoverFactory: new mHoverFactory.HoverFactory(serviceRegistry, inputManager, commandRegistry),
-        //         contentAssistFactory: contentAssistFactory,
-        //         keyBindingFactory: keyBindingFactory,
-        //         statusReporter: this.statusReporter,
-        //         domNode: this._parent,
-        //         syntaxHighlighter: this.syntaxHighlighter
-        //     });
-        codeEdit.getTextView();
+        var editor = codeEdit._editorCommands.editor;
+        editor.setText("hi",0,100,true)
+        console.log(editor);
 
     },
 		
