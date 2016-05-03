@@ -43104,7 +43104,8 @@ define('embeddedEditor/builder/embeddedEditor',[
 
     setCursor: function(x,y,result,codeEdit){
         //alert("X: "+x +" Y: "+y);
-        mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
+        //mExtensionCommands.getEditors(this.serviceRegistry,contentTypeRegistry);
+        mExtensionCommands.getOpenWithCommands(this._commandRegistry);
 
     },
 		
