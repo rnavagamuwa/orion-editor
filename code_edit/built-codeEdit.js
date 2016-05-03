@@ -43108,6 +43108,23 @@ define('embeddedEditor/builder/embeddedEditor',[
 			return once;
 		},
 
+    function registerAnnotationType(type, lineStyling) {
+        var index = type.lastIndexOf('.'); //$NON-NLS-0$
+        var suffix = type.substring(index + 1);
+        var properties = {
+            title: messages[suffix],
+            style: {styleClass: "annotation " + suffix}, //$NON-NLS-0$
+            html: "<div class='annotationHTML " + suffix + "'></div>", //$NON-NLS-1$ //$NON-NLS-0$
+            overviewStyle: {styleClass: "annotationOverview " + suffix} //$NON-NLS-0$
+        };
+        if (lineStyling) {
+            properties.lineStyle = {styleClass: "annotationLine " + suffix}; //$NON-NLS-0$
+        } else {
+            properties.rangeStyle = {styleClass: "annotationRange " + suffix}; //$NON-NLS-0$
+        }
+        mAnnotations.AnnotationType.registerType(type, properties);
+    },
+
     setCursor: function(x,y,result,codeEdit){
         
         var AT = mAnnotations.AnnotationType;
