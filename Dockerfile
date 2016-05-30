@@ -20,6 +20,7 @@ RUN sudo apt-get update && \
 RUN sudo apt-get update 
 
 RUN sudo -E bash -c "echo \"deb http://www.rabbitmq.com/debian/ testing main\" >> /etc/apt/sources.list" && \
+    sudo apt-get update && \
     sudo wget https://www.rabbitmq.com/rabbitmq-signing-key-public.asc && \
     sudo apt-key add rabbitmq-signing-key-public.asc && \
     sudo apt-get update && \
