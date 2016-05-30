@@ -17,7 +17,7 @@ RUN sudo apt-get update && \
     
 
 #FLUX
-RUN -E bash -c "echo \"deb http://www.rabbitmq.com/debian/ testing main\" >> /etc/apt/sources.list" && \
+RUN sudo -E bash -c "echo \"deb http://www.rabbitmq.com/debian/ testing main\" >> /etc/apt/sources.list" && \
     sudo wget https://www.rabbitmq.com/rabbitmq-signing-key-public.asc && \
     sudo apt-key add rabbitmq-signing-key-public.asc && \
     sudo apt-get update && \
